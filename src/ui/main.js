@@ -6,7 +6,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {Image,ToastAndroid} from 'react-native';
+import {Image, ToastAndroid} from 'react-native';
 import {
     TabNavigator,
 } from 'react-navigation';
@@ -21,24 +21,25 @@ import * as BackHandler from "react-native/Libraries/Utilities/BackHandler.andro
 * 底部导航组件
 */
 export default class Main extends Component {
-    componentWillMount(){
+    componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
     }
 
     componentWillUnmount() {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
     }
-    onBackAndroid=()=>{
-        if(this.props.navigation.state.routeName==="Main"){
+
+    onBackAndroid = () => {
+        if (this.props.navigation.state.routeName === "Main") {
             if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
                 //最近2秒内按过back键，可以退出应用。
                 BackHandler.exitApp();
-                return false
+                return false;
             }
             this.lastBackPressed = Date.now();
             ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
             return true;
-        }else{
+        } else {
             return true;
         }
     };
