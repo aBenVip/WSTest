@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './src/start-up';
+import Navigator from './src/navigator';
 
-AppRegistry.registerComponent('WS', () => App);
+AppRegistry.registerComponent('WS', () => Navigator);
