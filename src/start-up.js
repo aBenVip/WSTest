@@ -6,18 +6,18 @@
 
 import React, {Component} from 'react';
 import {
-    Button,
     StyleSheet,
     View,
     AppRegistry, Text
 } from 'react-native';
-import Main from "./ui/main";
 
 export default class App extends Component<{}> {
+
     componentDidMount() {
         //延时跳转，使用定时器，定时器在页面跳转结束时需要销毁
         this.timer = setTimeout(
             () => {
+                console.log(this.props);
                 this.props.navigation.navigate('Main')
             },
             1000);
