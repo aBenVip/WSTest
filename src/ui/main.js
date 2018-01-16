@@ -21,6 +21,7 @@ import * as BackHandler from "react-native/Libraries/Utilities/BackHandler.andro
 * 底部导航组件
 */
 export default class Main extends Component {
+
     componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
     }
@@ -45,6 +46,7 @@ export default class Main extends Component {
     };
 
     render() {
+
         return <Tab/>
     };
 }
