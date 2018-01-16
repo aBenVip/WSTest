@@ -12,12 +12,14 @@ import {
 } from 'react-native';
 
 export default class App extends Component<{}> {
-
+    constructor(props){
+        super(props);
+        console.log(this.props)
+    }
     componentDidMount() {
         //延时跳转，使用定时器，定时器在页面跳转结束时需要销毁
         this.timer = setTimeout(
             () => {
-                console.log(this.props);
                 this.props.navigation.navigate('Main')
             },
             1000);
