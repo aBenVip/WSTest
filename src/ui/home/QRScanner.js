@@ -6,8 +6,13 @@ import
     ToastAndroid
 } from 'react-native';
 import QRScannerView from "../../components/QRScreenView";
+import * as BackHandler from "react-native/Libraries/Utilities/BackHandler.android";
 
 export default class QRScanner extends Component {
+    constructor(props) {
+        super(props);
+        console.log(props)
+    }
     render() {
         return (
             <QRScannerView
@@ -23,7 +28,7 @@ export default class QRScanner extends Component {
     static _renderTitleBar() {
         return (
             <Text
-                style={{color: 'white', textAlignVertical: 'center', textAlign: 'center', font: 20, padding: 12}}
+                style={{color: 'white', textAlignVertical: 'center', textAlign: 'center', fontSize: 20, padding: 12}}
             >这里添加标题</Text>
         );
     }
@@ -31,7 +36,7 @@ export default class QRScanner extends Component {
     static _renderMenu() {
         return (
             <Text
-                style={{color: 'white', textAlignVertical: 'center', textAlign: 'center', font: 20, padding: 12}}
+                style={{color: 'white', textAlignVertical: 'center', textAlign: 'center', fontSize: 20, padding: 12}}
             >这里添加底部菜单</Text>
         )
     }
