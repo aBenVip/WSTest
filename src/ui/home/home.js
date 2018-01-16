@@ -6,17 +6,25 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {ToolbarAndroid, StyleSheet, View, Button, ToastAndroid, Text, ActivityIndicator} from 'react-native';
+import {StyleSheet, View, Button} from 'react-native';
+import QRScanner from "./QRScanner";
+
 
 export default class Home extends Component {
 
     render() {
+
         return (
             <View>
-                 <Text>asdjhlkasjdl</Text>
+                <Button title="扫描二维码"
+                        onPress={() => {
+                            console.log(this.props);
+                            this.props.navigation.navigate('QRScanner');
+                        }}/>
             </View>
         );
     }
+
 }
 
 const styles = StyleSheet.create({});
