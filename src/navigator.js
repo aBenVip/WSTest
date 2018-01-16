@@ -5,7 +5,6 @@
  */
 import React from 'react';
 
-import Main from "./ui/main";
 import {StackNavigator, TabNavigator} from "react-navigation";
 import App from "./start-up";
 import QRScanner from "./ui/home/QRScanner";
@@ -14,6 +13,7 @@ import Board from "./ui/board/board";
 import User from "./ui/user/user";
 import Work from "./ui/work/work";
 import {Image} from "react-native";
+
 const Tab = TabNavigator({
     Home: {
         screen: Home,
@@ -90,9 +90,10 @@ const Tab = TabNavigator({
     },
 });
 
+
 export default Navigator = StackNavigator({
-    App: {screen: App},
-    Main: {screen: Tab},
+    App: {screen: App},//欢迎页，两秒后跳转底部导航
+    Main: {screen: Tab},//底部导航页面
     QRScanner: {screen: QRScanner},
 }, {
     headerMode: 'none',

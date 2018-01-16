@@ -22,10 +22,6 @@ import * as BackHandler from "react-native/Libraries/Utilities/BackHandler.andro
 */
 export default class Main extends Component {
 
-    constructor(props){
-        super(props);
-        console.log(this.props)
-    }
     componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
     }

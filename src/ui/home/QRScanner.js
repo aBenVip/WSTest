@@ -3,15 +3,13 @@ import
 {
     StyleSheet,
     Text,
-    ToastAndroid
 } from 'react-native';
 import QRScannerView from "../../components/QRScreenView";
-import * as BackHandler from "react-native/Libraries/Utilities/BackHandler.android";
 
 export default class QRScanner extends Component {
     constructor(props) {
         super(props);
-        console.log(props)
+        console.log(props);
     }
     render() {
         return (
@@ -42,8 +40,8 @@ export default class QRScanner extends Component {
     }
 
     static barcodeReceived(e) {
-        ToastAndroid.show('Type: ' + e.type + '\nData: ' + e.data, ToastAndroid.SHORT);
-        //console.log(e)
+        this.props.navigation.state.params.callback(e.data);
+        this.props.navigation.goBack();
     }
 }
 const styles = StyleSheet.create({

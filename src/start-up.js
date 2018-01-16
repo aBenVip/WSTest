@@ -8,19 +8,25 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
-    AppRegistry, Text
+    AppRegistry, Text,
+    InteractionManager
 } from 'react-native';
 
+import { NavigationActions } from 'react-navigation'
+
 export default class App extends Component<{}> {
-    constructor(props){
-        super(props);
-        console.log(this.props)
-    }
+
     componentDidMount() {
         //延时跳转，使用定时器，定时器在页面跳转结束时需要销毁
         this.timer = setTimeout(
             () => {
-                this.props.navigation.navigate('Main')
+                const resetAction = NavigationActions.reset({
+                    index: 0,
+                    actions: [
+                        NavigationActions.navigate({ routeName: 'Main'})
+                    ]
+                });
+                this.props.navigation.dispatch(resetAction)
             },
             1000);
     }
